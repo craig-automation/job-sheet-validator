@@ -7,49 +7,45 @@ st.caption(
     "Prototype tool to reduce invoicing delays caused by missing or incorrect job sheet information"
 )
 
-customer_rules = {
-    "Customer A": {
-        "po_required": True,
-        "po_length": 8,
-        "valid_contracts": ["Full Service", "Maintenance"],
-    },
-    "Customer B": {
-        "po_required": True,
-        "po_length": 10,
-        "valid_contracts": ["Repair", "Maintenance"],
-    },
-    "Customer C": {
-        "po_required": False,
-        "po_length": None,
-        "valid_contracts": ["Full Service", "Repair"],
-    },
-}
+customer_rules = pd.read_csv("customer_rules_v2.csv")
 
 if "job_log" not in st.session_state:
     st.session_state["job_log"] = []
 
 
-def validate_job_sheet(customer, contract_type, po_number, job_description):
-    rules = customer_rules[customer]
+def validate_job_sheet(customer_number, contract_type, po_number, job_description):
+    rules = customer_rules[
+        customer_rules["customer_number"] == customer_number
+    ].iloc[0]
+
+    customer_name = rules["customer_name"]
+    po_required = rules["po_required"] == "Yes"
+    valid_contracts = str(rules["valid_contracts"]).split(",")
 
     issues = []
     invoice_risk_score = 0
 
-    if rules["po_required"] and not po_number.strip():
+    if po_required and not po_number.strip():
         issues.append("Missing PO number for a customer that requires a PO.")
         invoice_risk_score += 3
 
-    if rules["po_required"] and po_number.strip():
-        if not po_number.isdigit():
-            issues.append("PO number should contain digits only.")
+    if po_required and po_number.strip():
+        if not po_number.startswith(str(rules["po_prefix"])):
+            issues.append(
+                f"PO number should start with prefix '{rules['po_prefix']}' for {customer_name}."
+            )
             invoice_risk_score += 2
 
-        if len(po_number) != rules["po_length"]:
-            issues.append(f"PO number should be {rules['po_length']} digits for {customer}.")
+        if len(po_number.replace(str(rules["po_prefix"]), "", 1)) != int(rules["po_length"]):
+            issues.append(
+                f"PO number should match expected format: {rules['preferred_format']}."
+            )
             invoice_risk_score += 2
 
-    if contract_type not in rules["valid_contracts"]:
-        issues.append(f"Contract type '{contract_type}' may not be valid for {customer}.")
+    if contract_type not in valid_contracts:
+        issues.append(
+            f"Contract type '{contract_type}' may not be valid for {customer_name}."
+        )
         invoice_risk_score += 2
 
     if not job_description.strip():
@@ -66,7 +62,7 @@ def validate_job_sheet(customer, contract_type, po_number, job_description):
     return issues, invoice_risk_score, risk_level
 
 
-def analyse_notes_with_ai(customer, contract_type, po_number, job_description, issues, risk_level):
+def analyse_notes_with_ai(customer_number, customer_name, contract_type, po_number, job_description, issues, risk_level):
     api_key = st.secrets["OPENAI_API_KEY"]
     client = OpenAI(api_key=api_key)
 
@@ -84,7 +80,8 @@ Recommended Action: <specific action>
 Reviewer: <Technician | Service Admin | Manager>
 
 Job Details:
-Customer: {customer}
+Customer Number: {customer_number}
+Customer Name: {customer_name}
 Contract Type: {contract_type}
 PO Number: {po_number}
 Rule-Based Risk Level: {risk_level}
@@ -128,7 +125,19 @@ def parse_ai_response(text):
 
 st.subheader("Technician Job Details")
 
-customer = st.selectbox("Customer", list(customer_rules.keys()))
+customer_number = st.selectbox(
+    "Customer Number",
+    customer_rules["customer_number"].tolist()
+)
+
+selected_customer = customer_rules[
+    customer_rules["customer_number"] == customer_number
+].iloc[0]
+
+customer_name = selected_customer["customer_name"]
+
+st.write(f"**Customer Name:** {customer_name}")
+st.write(f"**Expected PO Format:** {selected_customer['preferred_format']}")
 
 contract_type = st.selectbox(
     "Contract Type",
@@ -143,7 +152,7 @@ use_ai = st.checkbox("Include AI analysis of technician notes", value=True)
 
 if st.button("Validate Job Sheet"):
     issues, invoice_risk_score, risk_level = validate_job_sheet(
-        customer,
+        customer_number,
         contract_type,
         po_number,
         job_description,
@@ -174,7 +183,8 @@ if st.button("Validate Job Sheet"):
         try:
             with st.spinner("Running AI note analysis..."):
                 ai_text = analyse_notes_with_ai(
-                    customer,
+                    customer_number,
+                    customer_name,
                     contract_type,
                     po_number,
                     job_description,
@@ -194,9 +204,11 @@ if st.button("Validate Job Sheet"):
             st.error(f"AI analysis failed: {e}")
 
     result = {
-        "Customer": customer,
+        "Customer Number": customer_number,
+        "Customer Name": customer_name,
         "Contract Type": contract_type,
         "PO Number": po_number,
+        "Expected PO Format": selected_customer["preferred_format"],
         "Rule Issues": len(issues),
         "Rule-Based Risk": risk_level,
         "Risk Score": invoice_risk_score,

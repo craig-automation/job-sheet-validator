@@ -1,0 +1,101 @@
+customer_number,customer_name,po_required,po_length,po_prefix,preferred_format,valid_contracts
+CUST1001,Vertex Engineering 1,Yes,10,INV,INV##########,"Repair,Maintenance"
+CUST1002,Northern Hydraulics 2,Yes,6,REQ,REQ######,Maintenance
+CUST1003,Alpha Logistics 3,Yes,6,INV,INV######,"Repair,Maintenance"
+CUST1004,Falcon Systems 4,Yes,8,JOB,JOB########,"Full Service,Maintenance,Repair"
+CUST1005,Apex Distribution 5,Yes,12,REQ,REQ############,"Full Service,Repair"
+CUST1006,Alpha Logistics 6,Yes,12,ORD,ORD############,"Full Service,Repair"
+CUST1007,Northern Hydraulics 7,Yes,10,PO,PO##########,"Full Service,Maintenance"
+CUST1008,Apex Distribution 8,Yes,10,AUTH,AUTH##########,"Full Service,Repair"
+CUST1009,Orion Manufacturing 9,Yes,6,JOB,JOB######,Maintenance
+CUST1010,Falcon Systems 10,Yes,12,PO,PO############,"Full Service,Maintenance,Repair"
+CUST1011,Metro Industrial 11,Yes,8,JOB,JOB########,"Full Service,Maintenance"
+CUST1012,Alpha Logistics 12,Yes,10,PO,PO##########,"Repair,Maintenance"
+CUST1013,Vertex Engineering 13,No,0,NONE,Not required,"Full Service,Repair"
+CUST1014,Prime Warehousing 14,Yes,8,ORD,ORD########,"Full Service,Repair"
+CUST1015,Titan Materials 15,Yes,6,REQ,REQ######,"Repair,Maintenance"
+CUST1016,Falcon Systems 16,Yes,8,SO,SO########,Maintenance
+CUST1017,Metro Industrial 17,Yes,10,AUTH,AUTH##########,"Full Service,Maintenance"
+CUST1018,Titan Materials 18,Yes,10,SO,SO##########,"Full Service,Repair"
+CUST1019,Vertex Engineering 19,Yes,10,INV,INV##########,Maintenance
+CUST1020,Apex Distribution 20,No,0,NONE,Not required,"Repair,Maintenance"
+CUST1021,Metro Industrial 21,Yes,8,JOB,JOB########,"Full Service,Maintenance,Repair"
+CUST1022,Falcon Systems 22,Yes,12,REQ,REQ############,Maintenance
+CUST1023,Summit Handling 23,Yes,8,REQ,REQ########,Maintenance
+CUST1024,Vertex Engineering 24,Yes,6,INV,INV######,"Repair,Maintenance"
+CUST1025,Apex Distribution 25,Yes,12,SO,SO############,"Full Service,Maintenance,Repair"
+CUST1026,Prime Warehousing 26,Yes,6,JOB,JOB######,"Full Service,Maintenance"
+CUST1027,Falcon Systems 27,Yes,10,PO,PO##########,"Full Service,Repair"
+CUST1028,Apex Distribution 28,Yes,12,PO,PO############,"Full Service,Repair"
+CUST1029,Falcon Systems 29,Yes,6,AUTH,AUTH######,"Full Service,Repair"
+CUST1030,Falcon Systems 30,Yes,8,ORD,ORD########,"Repair,Maintenance"
+CUST1031,Falcon Systems 31,Yes,10,SO,SO##########,"Full Service,Maintenance"
+CUST1032,Vertex Engineering 32,Yes,10,INV,INV##########,"Full Service,Maintenance"
+CUST1033,Titan Materials 33,Yes,6,JOB,JOB######,Maintenance
+CUST1034,Vertex Engineering 34,Yes,8,JOB,JOB########,Maintenance
+CUST1035,Falcon Systems 35,Yes,10,REQ,REQ##########,"Full Service,Maintenance,Repair"
+CUST1036,Apex Distribution 36,Yes,8,JOB,JOB########,"Full Service,Repair"
+CUST1037,Apex Distribution 37,Yes,12,REQ,REQ############,Maintenance
+CUST1038,Vertex Engineering 38,Yes,8,PO,PO########,"Full Service,Repair"
+CUST1039,Alpha Logistics 39,Yes,8,PO,PO########,"Full Service,Maintenance"
+CUST1040,Alpha Logistics 40,Yes,6,PO,PO######,"Full Service,Repair"
+CUST1041,Vertex Engineering 41,Yes,10,JOB,JOB##########,Maintenance
+CUST1042,Titan Materials 42,Yes,12,INV,INV############,Maintenance
+CUST1043,Apex Distribution 43,Yes,6,PO,PO######,Maintenance
+CUST1044,Summit Handling 44,No,0,NONE,Not required,Maintenance
+CUST1045,Prime Warehousing 45,Yes,6,PO,PO######,Maintenance
+CUST1046,Summit Handling 46,Yes,8,INV,INV########,"Repair,Maintenance"
+CUST1047,Falcon Systems 47,No,0,NONE,Not required,"Repair,Maintenance"
+CUST1048,Apex Distribution 48,Yes,10,SO,SO##########,"Repair,Maintenance"
+CUST1049,Vertex Engineering 49,No,0,NONE,Not required,"Full Service,Maintenance,Repair"
+CUST1050,Vertex Engineering 50,Yes,6,PO,PO######,"Repair,Maintenance"
+CUST1051,Northern Hydraulics 51,No,0,NONE,Not required,Maintenance
+CUST1052,Prime Warehousing 52,Yes,12,PO,PO############,"Repair,Maintenance"
+CUST1053,Apex Distribution 53,Yes,12,ORD,ORD############,Maintenance
+CUST1054,Metro Industrial 54,No,0,NONE,Not required,"Full Service,Maintenance,Repair"
+CUST1055,Prime Warehousing 55,Yes,8,ORD,ORD########,"Repair,Maintenance"
+CUST1056,Alpha Logistics 56,Yes,10,PO,PO##########,"Full Service,Maintenance"
+CUST1057,Orion Manufacturing 57,No,0,NONE,Not required,"Full Service,Maintenance,Repair"
+CUST1058,Falcon Systems 58,Yes,6,REQ,REQ######,"Full Service,Maintenance"
+CUST1059,Northern Hydraulics 59,Yes,6,JOB,JOB######,"Repair,Maintenance"
+CUST1060,Apex Distribution 60,Yes,8,REQ,REQ########,"Full Service,Maintenance,Repair"
+CUST1061,Alpha Logistics 61,Yes,12,JOB,JOB############,"Full Service,Maintenance,Repair"
+CUST1062,Orion Manufacturing 62,Yes,10,INV,INV##########,"Full Service,Repair"
+CUST1063,Titan Materials 63,Yes,12,INV,INV############,"Full Service,Repair"
+CUST1064,Prime Warehousing 64,Yes,6,PO,PO######,Maintenance
+CUST1065,Orion Manufacturing 65,Yes,6,REQ,REQ######,"Repair,Maintenance"
+CUST1066,Falcon Systems 66,Yes,8,ORD,ORD########,"Full Service,Maintenance"
+CUST1067,Titan Materials 67,Yes,10,INV,INV##########,Maintenance
+CUST1068,Falcon Systems 68,Yes,6,JOB,JOB######,"Full Service,Maintenance,Repair"
+CUST1069,Metro Industrial 69,Yes,8,ORD,ORD########,"Full Service,Maintenance"
+CUST1070,Vertex Engineering 70,Yes,10,ORD,ORD##########,"Full Service,Maintenance,Repair"
+CUST1071,Titan Materials 71,Yes,8,JOB,JOB########,"Full Service,Repair"
+CUST1072,Falcon Systems 72,No,0,NONE,Not required,"Full Service,Repair"
+CUST1073,Alpha Logistics 73,Yes,12,AUTH,AUTH############,"Full Service,Repair"
+CUST1074,Alpha Logistics 74,Yes,10,AUTH,AUTH##########,"Repair,Maintenance"
+CUST1075,Metro Industrial 75,Yes,12,REQ,REQ############,Maintenance
+CUST1076,Falcon Systems 76,Yes,6,PO,PO######,"Repair,Maintenance"
+CUST1077,Falcon Systems 77,Yes,10,REQ,REQ##########,"Full Service,Maintenance,Repair"
+CUST1078,Northern Hydraulics 78,No,0,NONE,Not required,"Repair,Maintenance"
+CUST1079,Alpha Logistics 79,Yes,10,AUTH,AUTH##########,"Full Service,Maintenance"
+CUST1080,Summit Handling 80,Yes,8,JOB,JOB########,"Full Service,Maintenance"
+CUST1081,Summit Handling 81,No,0,NONE,Not required,"Full Service,Maintenance,Repair"
+CUST1082,Northern Hydraulics 82,Yes,8,AUTH,AUTH########,"Repair,Maintenance"
+CUST1083,Apex Distribution 83,Yes,8,JOB,JOB########,"Full Service,Repair"
+CUST1084,Apex Distribution 84,Yes,10,INV,INV##########,"Full Service,Maintenance"
+CUST1085,Apex Distribution 85,Yes,12,INV,INV############,"Repair,Maintenance"
+CUST1086,Prime Warehousing 86,Yes,10,AUTH,AUTH##########,"Repair,Maintenance"
+CUST1087,Titan Materials 87,Yes,8,SO,SO########,"Full Service,Repair"
+CUST1088,Metro Industrial 88,Yes,10,ORD,ORD##########,"Full Service,Maintenance,Repair"
+CUST1089,Apex Distribution 89,Yes,6,PO,PO######,"Full Service,Repair"
+CUST1090,Northern Hydraulics 90,Yes,6,PO,PO######,"Full Service,Maintenance,Repair"
+CUST1091,Apex Distribution 91,Yes,10,SO,SO##########,"Full Service,Maintenance,Repair"
+CUST1092,Falcon Systems 92,Yes,12,REQ,REQ############,"Repair,Maintenance"
+CUST1093,Metro Industrial 93,Yes,12,PO,PO############,"Full Service,Maintenance,Repair"
+CUST1094,Falcon Systems 94,Yes,10,SO,SO##########,"Full Service,Maintenance"
+CUST1095,Summit Handling 95,Yes,6,JOB,JOB######,"Full Service,Repair"
+CUST1096,Falcon Systems 96,Yes,12,ORD,ORD############,Maintenance
+CUST1097,Metro Industrial 97,Yes,8,SO,SO########,Maintenance
+CUST1098,Northern Hydraulics 98,Yes,12,REQ,REQ############,"Full Service,Maintenance"
+CUST1099,Metro Industrial 99,Yes,8,SO,SO########,"Full Service,Maintenance,Repair"
+CUST1100,Orion Manufacturing 100,Yes,12,SO,SO############,Maintenance
